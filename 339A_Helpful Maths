@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        int ones = 0, twos = 0, threes = 0;
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '1') {
+                ones++;
+            } else if (ch == '2') {
+                twos++;
+            } else if (ch == '3') {
+                threes++;
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < ones; i++) {
+            result.append("1+");
+        }
+
+        for (int i = 0; i < twos; i++) {
+            result.append("2+");
+        }
+
+        for (int i = 0; i < threes; i++) {
+            result.append("3+");
+        }
+        if (result.length() > 0) {
+            result.deleteCharAt(result.length() - 1);
+        }
+
+        System.out.println(result);
+    }
+}
